@@ -1,10 +1,12 @@
 <?php
 
-
+/**
+ * OAuth2.0 compliant bearer token authorization.
+ */
 $app->post('/api/token', function () use ($app) {
     $app->response->header('Content-Type', 'application/json');
     $body = $app->request->params();
-    if ($body['grant_type'] == 'password') {
+    if ($body['grant_type'] === 'password') {
         $username = $body['username'];
         $password = $body['password'];
         $user = User::where('username', '=', $username)->orWhere('email', '=', $username)->first();
@@ -28,10 +30,12 @@ $app->post('/api/token', function () use ($app) {
     }
 });
 
-
+/**
+ * Route to revoke the OAuth2.0 compliant bearer token.
+ */
 $app->post('/api/revoke', function () use ($app) {
     $body = $app->request->getBody();
-    if ($body->token_type_hint == 'access_token' || $body->token_type_hint == 'refresh_token') {
+    if ($body->token_type_hint === 'access_token' || $body->token_type_hint === 'refresh_token') {
         if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
             echo '';
