@@ -1,7 +1,5 @@
 # ember-slim-boilerplate
 
-A boilerplate to hit the ground running with.
+Hit the ground running.
 
-Frameworks included:
-* Slim
-* Ember-cli
+_Written by Matthew Porter_
