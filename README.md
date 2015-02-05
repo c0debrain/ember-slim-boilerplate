@@ -10,13 +10,15 @@ _Written by Matthew Porter_
 In order to use this project you need the following:
 * node.js (for npm)
 * npm (for ember-cli)
+* bower (for ember-cli)
 * ember-cli -- http://ember-cli.com
 * slim framework
 
 
 # Hit the ground running
 
-To get started as fast as possible, run `install.sh`.
+To get started as fast as possible, run `install.sh` (this step requires that you have npm and bower installed).
+
 Be sure to serve your Apache server from `slim-app/public/`.
 
 
