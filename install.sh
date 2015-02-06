@@ -7,4 +7,4 @@ cd ..
 cd slim-app
 php composer.phar install
 cd ..
-#sh build.sh
+sh build.sh
